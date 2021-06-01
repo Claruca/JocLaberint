@@ -35,7 +35,7 @@ public class Laberint extends JPanel {
     private int[] posicions = new int[4];
     private int sortidaFila;
     private int sortidaColumna;
-    public static final String exit = "exit.png";
+    public static final String exit = "exitb.png";
     private BufferedImage bi;
 
     private FileReader f;
@@ -60,14 +60,10 @@ public class Laberint extends JPanel {
                         posicions[l] = posicions[l] / 49;
                     }
 
-                    //comprovar lectura
-                    for (int aja = 0; aja < posicions.length; aja++) {
-                        System.out.print(posicions[aja]);
-                    }
-                    System.out.println("---------");
-
                     Rectangle2D.Float r = new Rectangle2D.Float(x, y, COSTAT, COSTAT);
-                    Color col = new Color(0x26B300);
+                    //Color col = new Color(0x26B300);
+                    Color col = new Color(0x211F1E);
+
                     Rectangle2D.Float nord = new Rectangle2D.Float(x, y, COSTAT, GRUIXPARET);
                     Rectangle2D.Float est = new Rectangle2D.Float(x + COSTAT, y, GRUIXPARET, COSTAT);
                     Rectangle2D.Float sud = new Rectangle2D.Float(x, y + COSTAT, COSTAT, GRUIXPARET);
@@ -99,6 +95,7 @@ public class Laberint extends JPanel {
                 t[i][j].paintComponent(g);
             }
         }
+        //Casella sortida
         g.drawImage(bi, (sortidaColumna - 1) * COSTAT + GRUIXPARET, sortidaFila * COSTAT, COSTAT, COSTAT, null);
     }
 
@@ -114,19 +111,19 @@ public class Laberint extends JPanel {
         int[] parets = t[i][j].getParets();
         t[i][j].borraFitxa();
         return parets;
-        
+
     }
 
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(columnes * COSTAT, files * COSTAT);
     }
-    
-    public int getFiles(){
+
+    public int getFiles() {
         return files;
     }
-    
-     public int getColumnes(){
+
+    public int getColumnes() {
         return columnes;
     }
 

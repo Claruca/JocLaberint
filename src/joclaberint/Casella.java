@@ -48,6 +48,9 @@ public class Casella {
         g2d.setColor(this.col);
         g2d.fill(this.rec);
         g2d.setColor(new Color(0xB55200));
+        //g2d.setColor(new Color(0x417909));
+        //g2d.setColor(new Color(0xEC3232));
+
         if (paretN == 1) {
             g2d.fill(rN);
         }
